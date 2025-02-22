@@ -211,7 +211,9 @@
 			$('#lampu_txt').text(lampu.toUpperCase());
 			$('#kunci_txt').text(kunci.toUpperCase());
 			$('#ldr_txt').text(data.ldr_value);
-			$('#arus_txt').text(data.current);
+			$('#arus_txt').text((parseFloat(data.current) / 10.0).toFixed(2));
+
+			
 
 		});
 
@@ -240,7 +242,8 @@
 						const datetime = logEntry.datetime;
 						const timestamp = logEntry.timestamp;
 						const ldr_value = logEntry.ldr_value;
-						const current = logEntry.current;
+						const current = (parseFloat(logEntry.current) / 10.0).toFixed(2);
+						
 						const status = logEntry.status;
 
 						let status_str = "-";
